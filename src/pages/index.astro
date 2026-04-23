@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+	{
+		slug: 'como-resumir-pdfs-con-ia',
+		title: 'Cómo resumir PDFs de 100 páginas en 2 minutos con IA',
+		excerpt: 'Aprendé a usar ChatGPT y Claude para extraer lo importante de documentos largos sin leerlos enteros.',
+		date: '2025-04-23',
+		tag: 'Productividad'
+	},
+	{
+		slug: 'prompts-que-funcionan',
+		title: 'Los 10 prompts que usan los expertos (y vos no)',
+		excerpt: 'Estructuras probadas para obtener mejores resultados de cualquier IA generativa.',
+		date: '2025-04-20',
+		tag: 'Prompts'
+	},
+	{
+		slug: 'automatizar-facturas-google-sheets',
+		title: 'Automatizá tus facturas con IA + Google Sheets',
+		excerpt: 'Creá un sistema que genere facturas profesionales en segundos, sin saber programar.',
+		date: '2025-04-18',
+		tag: 'Automatización'
+	},
+	{
+		slug: 'emails-venta-claude',
+		title: 'Cómo escribir emails de venta que conviertan usando Claude',
+		excerpt: 'Plantillas y técnicas de copywriting potenciadas con inteligencia artificial.',
+		date: '2025-04-15',
+		tag: 'Marketing'
+	},
+	{
+		slug: 'mejores-ias-2025',
+		title: 'Las mejores IAs de 2025: comparativa completa',
+		excerpt: 'ChatGPT, Claude, Gemini, Kimi: cuál usar para cada tarea y por qué.',
+		date: '2025-04-12',
+		tag: 'Herramientas'
+	},
+	{
+		slug: 'crear-imagenes-ia',
+		title: 'Cómo crear imágenes profesionales con IA (sin saber diseño)',
+		excerpt: 'Midjourney, DALL-E, Ideogram: guía paso a paso para no diseñadores.',
+		date: '2025-04-10',
+		tag: 'Diseño'
+	}
+];
+---
+
+<Layout title="IA Para El Día a Día — Tutoriales prácticos de inteligencia artificial">
+	<section class="text-center py-12">
+		<h1 class="text-4xl md:text-5xl font-bold mb-4">
+			Aprendé a usar la IA para <span class="text-emerald-400">trabajar menos y mejor</span>
+		</h1>
+		<p class="text-xl text-slate-400 max-w-2xl mx-auto">
+			Tutoriales prácticos, sin tecnicismos. Para gente normal que quiere aprovechar la inteligencia artificial en su trabajo y su vida.
+		</p>
+	</section>
+
+	<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+		{posts.map(post => (
+			<article class="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-emerald-500 transition">
+				<div class="text-xs text-emerald-400 font-medium mb-2">{post.tag}</div>
+				<h2 class="text-xl font-semibold mb-2">
+					<a href={`/blog/${post.slug}`} class="hover:text-emerald-400 transition">{post.title}</a>
+				</h2>
+				<p class="text-slate-400 text-sm mb-4">{post.excerpt}</p>
+				<div class="text-xs text-slate-500">{post.date}</div>
+			</article>
+		))}
+	</section>
+</Layout>
